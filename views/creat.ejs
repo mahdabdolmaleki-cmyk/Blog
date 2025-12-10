@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./paritials/head.ejs') %>
+
+<body>
+    <nav> 
+
+        <ul>
+            <li><a href="/">home</a></li>
+            <li><a href="./creat">creat blog</a></li>
+            <li><a href="./about">about</a></li>
+        </ul>
+
+    </nav>
+    <h1>Creat Blogs</h1>
+    <h3></h3>
+    <p>Lorem ipsum dolor sit.</p>
+    <br><br>
+
+    <form action="./blogs" method="post" class="create-blog">
+        <label for="title">title : </label>
+        <input type="text" name="title" id="title" required>
+
+        <label for="snippet">snippet : </label>
+        <input type="text" name="snippet" id="snippet" required>
+
+        <button type="submit">create</button>
+
+    </form>
+
+        <%- include('./paritials/footer.ejs') %>
+
+
+</body>
+</html>
