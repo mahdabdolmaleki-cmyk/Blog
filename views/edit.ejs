@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./paritials/head.ejs') %>
+<body>
+  <main>
+    <h1>edit blog </h1>
+    <div class="create-blog">
+      <form action="/blogs/<%= blogs._id %>" method="post">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" value="<%= blogs.title %>" required>
+
+        <label for="snippet">Snippet</label>
+        <input type="text" id="snippet" name="snippet" value="<%= blogs.snippet %>" required>
+
+        <button class="save" type="submit">save</button>
+        <a class="cancel" href="/blogs/<%= blogs._id %>" >cancel</a>
+      </form>
+    </div>
+  </main>
+<%- include('./paritials/footer.ejs') %>
+</body>
+</html>
