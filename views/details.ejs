@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./paritials/head.ejs') %>
+<body>
+    <nav> 
+
+        <ul>
+            <li><a href="/">home</a></li>
+            <li><a href="../creat">creat blog</a></li>
+            <li><a href="../about">about</a></li>
+        </ul>
+
+    </nav>
+    <h1>Blogs</h1>
+    <h2>detailss pag</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa saepe, explicabo minima magnam iste quaerat laborum assumenda aperiam ratione itaque rerum amet nemo illo magni mollitia dolores non atque. Porro cum delectus fuga architecto, ad sequi? Nisi aspernatur eligendi numquam alias? Officia eum autem suscipit fugit facere voluptatibus, pariatur omnis.</p>
+    <br><br>
+        <div>
+            
+            <h3 ><%= blogs.title %></h3>
+            <p><%= blogs.snippet %></p>
+                
+            <a class="del" data-doc="<%= blogs._id %>"> Delete</a>
+            <a href="/blogs/<%= blogs._id %>/edit" class="edit" >Edit</a>
+               
+
+        
+
+    <%- include('./paritials/footer.ejs') %>
+
+        <script>
+
+            const deleteBtn = document.querySelector('.del');
+            deleteBtn.addEventListener('click', (e)=>{
+                const id = e.target.getAttribute('data-doc');
+
+                fetch('/blogs/' + id, {
+                    method: 'DELETE'
+                }).then(res => window.location.href= '/')
+                  .catch(err => console.log(err));
+            });
+
+        </script>
+        
+</body>
+</html>
